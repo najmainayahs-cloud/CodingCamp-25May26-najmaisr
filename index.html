@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Expense & Budget Visualizer</title>
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="light">
+
+  <header>
+    <h1>Expense & Budget Visualizer</h1>
+
+<div class="theme-buttons">
+
+  <button id="lightModeBtn">
+    ☀️ Light Mode
+  </button>
+
+  <button id="darkModeBtn">
+    🌙 Dark Mode
+  </button>
+
+</div>
+  </header>
+
+  <main>
+
+    <!-- Total Balance -->
+    <section id="balance-section">
+
+      <h2>Total Balance</h2>
+
+      <span id="totalBalance">
+        Rp 0
+      </span>
+
+    </section>
+
+    <!-- Transaction Form -->
+    <section id="form-section">
+
+      <form id="transactionForm">
+
+        <label for="itemName">
+          Item Name
+        </label>
+
+        <input
+          id="itemName"
+          type="text"
+          placeholder="Enter item name"
+          required
+        />
+
+        <label for="amount">
+          Amount
+        </label>
+
+        <input
+          id="amount"
+          type="number"
+          placeholder="Enter amount"
+          required
+        />
+
+        <label for="category">
+          Category
+        </label>
+
+        <select id="category" required>
+
+          <option value="">
+            Select Category
+          </option>
+
+          <option value="Food">
+            Food
+          </option>
+
+          <option value="Transport">
+            Transport
+          </option>
+
+          <option value="Fun">
+            Fun
+          </option>
+
+        </select>
+
+        <button type="submit">
+          Add Transaction
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- Spending Limit -->
+    <section id="limit-section">
+
+      <label for="spendLimit">
+        Spending Limit
+      </label>
+
+      <input
+        id="spendLimit"
+        type="number"
+        placeholder="Set spending limit"
+      />
+
+    </section>
+
+    <!-- Sort -->
+    <section id="sort-section">
+
+      <label for="sortMode">
+        Sort Transactions
+      </label>
+
+      <select id="sortMode">
+
+        <option value="default">
+          Default
+        </option>
+
+        <option value="amount-asc">
+          Amount Ascending
+        </option>
+
+        <option value="amount-desc">
+          Amount Descending
+        </option>
+
+        <option value="category-asc">
+          Category
+        </option>
+
+      </select>
+
+    </section>
+
+<div class="bottom-layout">
+
+  <!-- Chart -->
+  <section id="chart-section">
+
+    <canvas id="expenseChart"></canvas>
+
+  </section>
+
+  <!-- Transaction List -->
+  <section id="transaction-section">
+
+    <h2>Transactions</h2>
+
+    <div id="transactionList">
+
+    </div>
+
+  </section>
+
+</div>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- JavaScript -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
